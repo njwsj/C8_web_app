@@ -1,0 +1,198 @@
+==================================================
+ C8 选择性预测服务（T3Time-Bi 路线A）
+==================================================
+[OK] 模型文件就绪
+
+访问地址: http://localhost:5001
+[提示] 生产部署请使用: gunicorn -w 1 -b 0.0.0.0:5001 --timeout 120 app:app
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+/usr/local/lib/python3.8/site-packages/pymysql/_auth.py:9: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  from cryptography.hazmat.backends import default_backend
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.21.60.169:5001
+[33mPress CTRL+C to quit[0m
+223.160.128.68 - - [04/Jun/2026 10:38:35] "GET / HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:38:35] "GET /api/status HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:38:58] "GET / HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:38:58] "GET /api/status HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:40:11] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:40:51] "GET / HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:40:51] "GET /api/status HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:43:54] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:43:58] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:43:58] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:43:59] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:43:59] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:44:00] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:44:00] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:44:00] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:44:02] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:45:58] "GET /api/history/3 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:00] "GET /api/history/4 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:02] "GET /api/history/8 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:04] "GET /api/history/7 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:06] "GET /api/history/6 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:08] "GET /api/history/8 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:29] "GET /api/history HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:38] "GET /api/history/3 HTTP/1.1" 200 -
+223.160.128.68 - - [04/Jun/2026 10:46:40] "GET /api/history/1 HTTP/1.1" 200 -
+157.55.39.223 - - [04/Jun/2026 10:49:55] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+40.77.167.243 - - [04/Jun/2026 10:49:59] "GET / HTTP/1.1" 200 -
+40.77.179.152 - - [04/Jun/2026 10:50:00] "GET /api/status HTTP/1.1" 200 -
+198.235.24.149 - - [04/Jun/2026 11:17:24] "GET / HTTP/1.1" 200 -
+65.49.1.80 - - [04/Jun/2026 11:19:05] code 400, message Bad request version ('À\x14À')
+65.49.1.80 - - [04/Jun/2026 11:19:05] "[35m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03øP\x17ì.W&lÐõqÇ\x0c¾¹,üßÊ\x19òz¯\x11þLcÕkG\x89\x0f\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" HTTPStatus.BAD_REQUEST -
+150.242.79.83 - - [04/Jun/2026 11:25:25] "GET / HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:25:25] "GET /api/status HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:25:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+150.242.79.83 - - [04/Jun/2026 11:26:54] "GET / HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:26:54] "GET /api/status HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:27:38] "GET / HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:27:38] "GET /api/status HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:27:39] "GET / HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:27:39] "GET /api/status HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:27:52] "GET /api/history HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:27:53] "GET /api/history/5 HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:28:23] "GET / HTTP/1.1" 200 -
+150.242.79.83 - - [04/Jun/2026 11:28:23] "GET /api/status HTTP/1.1" 200 -
+59.82.135.23 - - [04/Jun/2026 11:48:51] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x03\x01\x02\x01\x00\x00þ\x03\x034w\x84à\x80\x90¼\x0fggV')
+59.82.135.23 - - [04/Jun/2026 11:48:51] "[35m[1m\x16\x03\x03\x01\x02\x01\x00\x00þ\x03\x034w\x84à\x80\x90¼\x0fggV \x83\x8cÛfÈ\x87V\x08¦®ïzC\x7fw\x05\x17º\x8c×\x00\x00VÀ,À+À0À/\x00\x9f\x00£\x00\x9e\x00¢À$À(À#À'\x00k\x00j\x00g\x00@À.À2À-À1À&À*À%À)À[0m" HTTPStatus.BAD_REQUEST -
+150.242.79.46 - - [04/Jun/2026 14:03:57] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:03:57] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:04:01] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:04:01] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:05:03] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:05:03] "GET /api/status HTTP/1.1" 200 -
+==================================================
+ C8 选择性预测服务（T3Time-Bi 路线A）
+==================================================
+[OK] 模型文件就绪
+
+访问地址: http://localhost:5001
+[提示] 生产部署请使用: gunicorn -w 1 -b 0.0.0.0:5001 --timeout 120 app:app
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+/usr/local/lib/python3.8/site-packages/pymysql/_auth.py:9: CryptographyDeprecationWarning: Python 3.8 is no longer supported by the Python core team and support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.8.
+  from cryptography.hazmat.backends import default_backend
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.
+150.242.79.46 - - [04/Jun/2026 14:05:30] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:05:30] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:13:52] "GET /api/status HTTP/1.1" 200 -
+app.py:220: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  ckpt = torch.load(paths['model'], map_location='cpu')
+/usr/local/lib/python3.8/site-packages/sklearn/base.py:348: InconsistentVersionWarning: Trying to unpickle estimator MinMaxScaler from version 1.8.0 when using version 1.3.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/usr/local/lib/python3.8/site-packages/sklearn/base.py:458: UserWarning: X has feature names, but MinMaxScaler was fitted without feature names
+  warnings.warn(
+150.242.79.46 - - [04/Jun/2026 14:14:00] "POST /api/predict HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:14:04] "GET /api/history HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:16:07] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:16:07] "GET /api/status HTTP/1.1" 200 -
+172.236.239.55 - - [04/Jun/2026 14:16:47] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:30:05] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:30:05] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:30:07] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:30:07] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:58:02] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 14:58:02] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 15:13:43] "GET / HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 15:13:43] "GET /api/status HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 15:14:02] "GET /api/status HTTP/1.1" 200 -
+/usr/local/lib/python3.8/site-packages/sklearn/base.py:458: UserWarning: X has feature names, but MinMaxScaler was fitted without feature names
+  warnings.warn(
+150.242.79.46 - - [04/Jun/2026 15:14:17] "POST /api/predict HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 15:15:08] "GET /api/history HTTP/1.1" 200 -
+150.242.79.46 - - [04/Jun/2026 15:15:17] "GET /api/history/5 HTTP/1.1" 200 -
+45.79.207.111 - - [04/Jun/2026 15:50:35] code 400, message Bad request syntax ('stats')
+45.79.207.111 - - [04/Jun/2026 15:50:35] "[35m[1mstats[0m" HTTPStatus.BAD_REQUEST -
+172.239.71.244 - - [04/Jun/2026 15:50:41] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03uð\x87w')
+172.239.71.244 - - [04/Jun/2026 15:50:41] "[35m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03uð\x87w\x09Ô'í[0m" HTTPStatus.BAD_REQUEST -
+205.210.31.24 - - [04/Jun/2026 16:26:43] code 400, message Bad request version ('À\x13À')
+205.210.31.24 - - [04/Jun/2026 16:26:43] "[35m[1m\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03HÐÁÆ>\x90x\x1d0Bì\x18Ñó¸gëB\x90¿\\©ËY\x95¼fxóÍµù e\x89\x8f®3c\x96\x86ÓòøÕÌ¼âñ×\x10Ç\x8fÜÔâ¤³&Lc5\x0dPÁ\x00&À+À/À,À0Ì©Ì¨À\x09À\x13À[0m" HTTPStatus.BAD_REQUEST -
+205.210.31.24 - - [04/Jun/2026 16:26:43] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.24 - - [04/Jun/2026 16:26:43] "[35m[1m\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03ju\x94h\x19ÉF(¹²:ò"Úç¶¯J*Õq¾°R\x1cã\x13\x97:Î¡Y\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À\x09À(À$À\x14À[0m" HTTPStatus.BAD_REQUEST -
+185.242.226.33 - - [04/Jun/2026 16:59:01] "GET / HTTP/1.1" 200 -
+212.102.40.218 - - [04/Jun/2026 17:09:03] code 400, message Bad request version ('À#À¬À®À+À')
+212.102.40.218 - - [04/Jun/2026 17:09:03] "[35m[1m\x16\x03\x03\x01¥\x01\x00\x01¡\x03\x031 \x0dm0\x09\x15óB2#ÇX\x99ø>½\x03ê©]ÌZ\x18e¹×\x14Ë\x9eø< \x98-qc±®Ää\x90§×\x06Yã\x08jÄÛ¡Ùd²Ã \x9aÿ9\x03Ñ*z\x0d\x00\x8a\x00\x16\x003\x00gÀ\x9eÀ¢\x00\x9e\x009\x00kÀ\x9fÀ£\x00\x9f\x00E\x00¾\x00\x88\x00Ä\x00\x9aÀ\x08À\x09À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+212.102.40.218 - - [04/Jun/2026 17:09:03] code 400, message Bad request version ('q¿\x8e\x17\x04Ã8\x9cY+\x97¿\x9e«\x14¸')
+212.102.40.218 - - [04/Jun/2026 17:09:03] "[35m[1m\x16\x03\x03\x01¥\x01\x00\x01¡\x03\x03ó\x92ì\x03£\x1cDß\x1eq¿\x8e\x17\x04Ã8\x9cY+\x97¿\x9e«\x14¸[0m" HTTPStatus.BAD_REQUEST -
+212.102.40.218 - - [04/Jun/2026 17:09:04] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x03\x01V\x01\x00\x01R\x03\x03]f=®¢6\x98g\x96±Ñö\x19ð\x88nNÀë\x02\x0e\x86'çXVrrÜ*T¾")
+212.102.40.218 - - [04/Jun/2026 17:09:04] "[35m[1m\x16\x03\x03\x01V\x01\x00\x01R\x03\x03]f=®¢6\x98g\x96±Ñö\x19ð\x88nNÀë\x02\x0e\x86'çXVrrÜ*T¾ HÃÊT>¿KCZ^\x80Æ´uºyM\x8cFÖ\x10+^n0Ù\x82.îvèÉ\x00FÀ\x12À\x07Ì\x14\x13\x01\x13\x02Ì©ÀsÀrÀ,À¯À­À$À[0m" HTTPStatus.BAD_REQUEST -
+212.102.40.218 - - [04/Jun/2026 17:09:05] code 400, message Bad request version ('!\x00*µ$\x9a/\x9fY£é#\x936ïò\x12\x16¤Ù(\x07b')
+212.102.40.218 - - [04/Jun/2026 17:09:05] "[35m[1m\x16\x03\x03\x01H\x01\x00\x01D\x03\x03¢\x1aÎäý&\x87\x93\x18­´Ê·Ãð4·¡\x9f\x8ea;>\x0d!d\x1a\\\x14ð\x95ð !\x00*µ$\x9a/\x9fY£é#\x936ïò\x12\x16¤Ù(\x07b[0m" HTTPStatus.BAD_REQUEST -
+212.102.40.218 - - [04/Jun/2026 17:09:06] code 400, message Bad request version ("µ\x03f°Wg¡Ùß\\idýÚ\x92ë\x00\x8c\x8a\x8aÀ\x12À\x13À\x07À'Ì\x14À/\x13\x01À\x14\x13\x02À(Ì©À0ÀsÀ`ÀrÀaÀ,ÀvÀ¯ÀwÀ\xadÌ¨À$\x13\x05À")
+212.102.40.218 - - [04/Jun/2026 17:09:06] "[35m[1m\x16\x03\x03\x01\x99\x01\x00\x01\x95\x03\x03vØc`\x0e\x08øD\x00Q\x8csÕ³à¾ó\x15\x80\x0f¼¾\x03ÝdËÌf\x16ïaD \x07;ª=øÌÖô¡\x19õøµÑ\x88 µ\x03f°Wg¡Ùß\\idýÚ\x92ë\x00\x8c\x8a\x8aÀ\x12À\x13À\x07À'Ì\x14À/\x13\x01À\x14\x13\x02À(Ì©À0ÀsÀ`ÀrÀaÀ,ÀvÀ¯ÀwÀ­Ì¨À$\x13\x05À[0m" HTTPStatus.BAD_REQUEST -
+212.102.40.218 - - [04/Jun/2026 17:09:07] code 400, message Bad request version ('À#À¬À®À+À')
+212.102.40.218 - - [04/Jun/2026 17:09:07] "[35m[1m\x16\x03\x02\x01\x9a\x01\x00\x01\x96\x03\x02©¥ÊB,\x1a¼\x8eE\x82r´Fòh \x11v\x82¼²\x8d¶ÖSÚ§-¾ËÆ5 \x83¡\x1eü\x03¡Ì°\x02A4hz\x1a\x14¾±\x911Ë\x81'Á»_yËXÑ\x9a\x93Ö\x00\x8a\x00\x16\x003\x00gÀ\x9eÀ¢\x00\x9e\x009\x00kÀ\x9fÀ£\x00\x9f\x00E\x00¾\x00\x88\x00Ä\x00\x9aÀ\x08À\x09À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+212.102.40.218 - - [04/Jun/2026 17:09:07] code 400, message Bad request version ('À#À¬À®À+À')
+212.102.40.218 - - [04/Jun/2026 17:09:07] "[35m[1m\x16\x03\x01\x01§\x01\x00\x01£\x03\x03ª0\x99\x07U$Ìïz»Qì\x00?ÙT]¬ÕcÂ"0héÌ`-\x9a\x05\x84² _}×§\x8a°ézZG¹Å«gXV¾Täl\x97q\x0e\x0b¯9ë´äÚÙ«\x00\x8a\x00\x16\x003\x00gÀ\x9eÀ¢\x00\x9e\x009\x00kÀ\x9fÀ£\x00\x9f\x00E\x00¾\x00\x88\x00Ä\x00\x9aÀ\x08À\x09À#À¬À®À+À[0m" HTTPStatus.BAD_REQUEST -
+69.5.169.199 - - [04/Jun/2026 20:23:58] code 400, message Bad HTTP/0.9 request type ('W\x00\x00\x00\x00\x11\x11\x07\x00\x00ÿÿ\x03\x00\x00þ\x03\x00\x00\x14\x00')
+69.5.169.199 - - [04/Jun/2026 20:23:58] "[35m[1mW\x00\x00\x00\x00\x11\x11\x07\x00\x00ÿÿ\x03\x00\x00þ\x03\x00\x00\x14\x00\x1c\x08[0m" HTTPStatus.BAD_REQUEST -
+146.56.199.152 - - [04/Jun/2026 21:16:45] code 400, message Bad request version ('®')
+146.56.199.152 - - [04/Jun/2026 21:16:45] "[35m[1m\x16\x03\x01\x00ì\x01\x00\x00è\x03\x03\x14ÓYú\x9b\x97Êá\x19w³\x04\x1aY¶½0\x8a®@¬U\x0c\x11n\x8c\x9e\x15VoÑ\x94 ¾(öÄ¹\x05ØÿBÑ\x09f6\x85\x0c\x1f®[0m" HTTPStatus.BAD_REQUEST -
+146.56.199.152 - - [04/Jun/2026 21:32:15] "GET / HTTP/1.1" 200 -
+146.56.199.152 - - [04/Jun/2026 21:32:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+3.131.169.210 - - [04/Jun/2026 22:12:01] "GET / HTTP/1.1" 200 -
+3.131.169.210 - - [04/Jun/2026 22:13:16] "GET / HTTP/1.1" 200 -
+3.131.169.210 - - [04/Jun/2026 22:15:07] code 400, message Bad request version ('À\x14À')
+3.131.169.210 - - [04/Jun/2026 22:15:07] "[35m[1m\x16\x03\x01\x01\x00\x01\x00\x00ü\x03\x03²ÅW\x1a?¾ïxÞ91¸ö\x09þ±Ìz¢=&¼3í÷¼¼fÔ\x0f¹` Û¾\x9c3\x9d°\x90H[bÑ7]ÍÇ1ç3÷×\x14\x025ºÝ\x18\x0eÉ\x06\x1d\x1a)\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À[0m" HTTPStatus.BAD_REQUEST -
+3.131.169.210 - - [04/Jun/2026 22:16:05] code 400, message Bad request version ('À\x14À')
+3.131.169.210 - - [04/Jun/2026 22:16:05] "[35m[1m\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03Uá#cH\x15<ùÎ\x8d~rÞ\x90\x11V£\x8cBý\x84l\x82'a\x0bpZG´ÂÎ pÍ\x9cz×ß§Ã\x99IV\x8aÒ¢¦\x1cQ_S=cb\x99çR1áXWËð\x94\x00&Ì¨Ì©À/À0À+À,À\x13À\x09À\x14À[0m" HTTPStatus.BAD_REQUEST -
+146.70.247.96 - - [05/Jun/2026 00:04:05] "GET / HTTP/1.1" 200 -
+45.148.10.200 - - [05/Jun/2026 01:34:58] code 400, message Bad request version ('À\x13À')
+45.148.10.200 - - [05/Jun/2026 01:34:58] "[35m[1m\x16\x03\x01\x01\x0c\x01\x00\x01\x08\x03\x03\x87;×\x90\x81·\x1b\x18¸\x98{Ù3Â\x86ø:ÜE\x84\x8e(Ý^ÁS\x85Ì¿}\x13@ H¨­á&]Òþ^ïÑ\x09¼6«,\x9fz¤dzRüu\x12t\x8f1ÁE$æ\x00&À+À/À,À0Ì©Ì¨À\x09À\x13À[0m" HTTPStatus.BAD_REQUEST -
+45.148.10.200 - - [05/Jun/2026 01:34:59] "GET / HTTP/1.1" 200 -
+45.148.10.200 - - [05/Jun/2026 01:35:00] "GET / HTTP/1.1" 200 -
+45.148.10.200 - - [05/Jun/2026 01:35:00] "[33mGET /secret.yaml HTTP/1.1[0m" 404 -
+45.148.10.200 - - [05/Jun/2026 01:35:01] "[33mGET /refresh_token HTTP/1.1[0m" 404 -
+45.148.10.200 - - [05/Jun/2026 01:35:01] "[33mGET /.env.sample HTTP/1.1[0m" 404 -
+45.148.10.200 - - [05/Jun/2026 01:35:02] "[33mGET /web/.env HTTP/1.1[0m" 404 -
+45.148.10.200 - - [05/Jun/2026 01:35:02] "[33mGET /serverless.yaml HTTP/1.1[0m" 404 -
+69.5.169.231 - - [05/Jun/2026 04:40:02] code 400, message Bad HTTP/0.9 request type ('W\x00\x00\x00\x00\x11\x11\x07\x00\x00ÿÿ\x03\x00\x00þ\x03\x00\x00\x14\x00')
+69.5.169.231 - - [05/Jun/2026 04:40:02] "[35m[1mW\x00\x00\x00\x00\x11\x11\x07\x00\x00ÿÿ\x03\x00\x00þ\x03\x00\x00\x14\x00\x1c\x08[0m" HTTPStatus.BAD_REQUEST -
+205.210.31.150 - - [05/Jun/2026 04:44:50] code 400, message Bad request version ('À\x13À')
+205.210.31.150 - - [05/Jun/2026 04:44:50] "[35m[1m\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03ªÉ\x14÷÷¥Ð\x01ÄJª¯wI¼/µ\x16\x07\\\x7fN\\`\x94\x0f\x1bÊÖz¢ì Ã¤\x1d\x01"ÎÕ5S«»\x8cr\x9byÒÐÍ¶1\x88ô¿ nï:\x1a\x81!ÑK\x00&À+À/À,À0Ì©Ì¨À\x09À\x13À[0m" HTTPStatus.BAD_REQUEST -
+205.210.31.150 - - [05/Jun/2026 04:44:51] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.150 - - [05/Jun/2026 04:44:51] "[35m[1m\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x039\x18UÖ\x8e\x97;\x04\x0dÐPx\x9enª\x9eÚCUR/åbMiâTÆc\x97r@\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À\x09À(À$À\x14À[0m" HTTPStatus.BAD_REQUEST -
+147.185.132.48 - - [05/Jun/2026 04:48:21] code 400, message Bad request version ('À\x13À')
+147.185.132.48 - - [05/Jun/2026 04:48:21] "[35m[1m\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03SiÜMJ7\x9aû\x80\x98Af\x1b\x96¯oNy\x1dÃÀ¦¬Ç`\x8fb:*²\x9cß \x88ó\x0f\x95¼\x97\x1f´h\x89I¼\x90ýYi²à}\x07\x8aC\x86Ü\x7f?ê\x09#ú©\x94\x00&À+À/À,À0Ì©Ì¨À\x09À\x13À[0m" HTTPStatus.BAD_REQUEST -
+147.185.132.48 - - [05/Jun/2026 04:48:22] code 400, message Bad request syntax ('\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03ú\x10\x98D')
+147.185.132.48 - - [05/Jun/2026 04:48:22] "[35m[1m\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03ú\x10\x98D[0m" HTTPStatus.BAD_REQUEST -
+178.159.37.70 - - [05/Jun/2026 06:11:26] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+178.159.37.70 - - [05/Jun/2026 06:11:26] "[35m[1m\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+121.40.42.83 - - [05/Jun/2026 06:11:59] code 400, message Bad request version ('\x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00àmß_')
+121.40.42.83 - - [05/Jun/2026 06:11:59] "[35m[1m\x01\x00\x00ýÎú\x0b° \x00\x00\x00MMS\x14\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x01\x00\x03\x00ðððð\x0b\x00\x04\x00\x1c\x00\x03\x00N\x00S\x00P\x00l\x00a\x00y\x00e\x00r\x00/\x009\x00.\x000\x00.\x000\x00.\x002\x009\x008\x000\x00;\x00 \x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00àmß_[0m" HTTPStatus.BAD_REQUEST -
+121.40.42.83 - - [05/Jun/2026 06:12:04] code 400, message Bad request version ('GetClassName\x00\x00\x00\x02\x04\x00\x00\x00\x00\x01\x00')
+121.40.42.83 - - [05/Jun/2026 06:12:04] "[35m[1m\x00\x00\x00\x1f\x00\x00\x00\x00\x00\x00\x00\x0cGetClassName\x00\x00\x00\x02\x04\x00\x00\x00\x00\x01\x00[0m" HTTPStatus.BAD_REQUEST -
+121.40.42.83 - - [05/Jun/2026 06:12:04] "GET / HTTP/1.0" 200 -
+121.40.42.83 - - [05/Jun/2026 06:12:09] "GET / HTTP/1.0" 200 -
+121.40.42.83 - - [05/Jun/2026 06:12:09] "[33mPOST /sdk HTTP/1.1[0m" 404 -
+121.40.42.83 - - [05/Jun/2026 06:12:09] "[33mGET /nmaplowercheck1780611129 HTTP/1.1[0m" 404 -
+121.40.42.83 - - [05/Jun/2026 06:12:09] "[33mGET /HNAP1 HTTP/1.1[0m" 404 -
+121.40.42.83 - - [05/Jun/2026 06:12:09] "[33mGET /evox/about HTTP/1.1[0m" 404 -
+121.40.42.83 - - [05/Jun/2026 06:12:19] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ns\x7f~\x0e±X\x99Üuý$S£·Aè¥A}\x984\x9cTRè¦\x13a\x90')
+121.40.42.83 - - [05/Jun/2026 06:12:19] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ns\x7f~\x0e±X\x99Üuý$S£·Aè¥A}\x984\x9cTRè¦\x13a\x90\x1e¡\x00\x00Ú\x00\x05\x00\x04\x00\x02\x00\x01\x00\x16\x003\x009\x00:\x00\x18\x005\x00[0m" HTTPStatus.BAD_REQUEST -
+121.40.42.83 - - [05/Jun/2026 06:12:19] code 400, message Bad request version ('&\x10x~\x02Û]íD\x13=\x1b§"\x10?\x00\x00Ú\x00\x05\x00\x04\x00\x02\x00\x01\x00\x16\x003\x009\x00:\x00\x18\x005\x00')
+121.40.42.83 - - [05/Jun/2026 06:12:19] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Q\x1b\x01%6\x0c»gsE\x06e\x1bF\x8c &\x10x~\x02Û]íD\x13=\x1b§"\x10?\x00\x00Ú\x00\x05\x00\x04\x00\x02\x00\x01\x00\x16\x003\x009\x00:\x00\x18\x005\x00[0m" HTTPStatus.BAD_REQUEST -
+121.40.42.83 - - [05/Jun/2026 06:12:19] "GET / HTTP/1.0" 200 -
+121.40.42.83 - - [05/Jun/2026 06:12:19] "GET / HTTP/1.1" 200 -
+44.220.185.13 - - [05/Jun/2026 07:26:31] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03{7')
+44.220.185.13 - - [05/Jun/2026 07:26:31] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03{7\x0cö:ãYl.òQ\x06®d@]{ª¬\x08²z\x08\x12Bà¹\x18÷¥[0m" HTTPStatus.BAD_REQUEST -
+44.220.185.13 - - [05/Jun/2026 07:26:32] "GET / HTTP/1.1" 200 -
+178.159.37.70 - - [05/Jun/2026 08:08:27] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+178.159.37.70 - - [05/Jun/2026 08:08:27] "[35m[1m\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+69.5.169.214 - - [05/Jun/2026 08:26:47] code 400, message Bad HTTP/0.9 request type ('W\x00\x00\x00\x00\x11\x11\x07\x00\x00ÿÿ\x03\x00\x00þ\x03\x00\x00\x14\x00')
+69.5.169.214 - - [05/Jun/2026 08:26:47] "[35m[1mW\x00\x00\x00\x00\x11\x11\x07\x00\x00ÿÿ\x03\x00\x00þ\x03\x00\x00\x14\x00\x1c\x08[0m" HTTPStatus.BAD_REQUEST -
+198.235.24.5 - - [05/Jun/2026 08:58:25] "GET / HTTP/1.1" 200 -
+107.148.27.71 - - [05/Jun/2026 09:07:28] code 400, message Bad request version ('\x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00àmß_')
+107.148.27.71 - - [05/Jun/2026 09:07:28] "[35m[1m\x01\x00\x00ýÎú\x0b° \x00\x00\x00MMS\x14\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x01\x00\x03\x00ðððð\x0b\x00\x04\x00\x1c\x00\x03\x00N\x00S\x00P\x00l\x00a\x00y\x00e\x00r\x00/\x009\x00.\x000\x00.\x000\x00.\x002\x009\x008\x000\x00;\x00 \x00{\x000\x000\x000\x000\x00A\x00A\x000\x000\x00-\x000\x00A\x000\x000\x00-\x000\x000\x00a\x000\x00-\x00A\x00A\x000\x00A\x00-\x000\x000\x000\x000\x00A\x000\x00A\x00A\x000\x00A\x00A\x000\x00}\x00\x00\x00àmß_[0m" HTTPStatus.BAD_REQUEST -
+107.148.27.71 - - [05/Jun/2026 09:07:33] code 400, message Bad request version ('GetClassName\x00\x00\x00\x02\x04\x00\x00\x00\x00\x01\x00')
+107.148.27.71 - - [05/Jun/2026 09:07:33] "[35m[1m\x00\x00\x00\x1f\x00\x00\x00\x00\x00\x00\x00\x0cGetClassName\x00\x00\x00\x02\x04\x00\x00\x00\x00\x01\x00[0m" HTTPStatus.BAD_REQUEST -
+147.185.132.52 - - [05/Jun/2026 11:40:53] "GET / HTTP/1.1" 200 -
