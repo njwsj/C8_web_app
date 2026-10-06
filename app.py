@@ -44,14 +44,15 @@ N_DEC_LAYERS = 1
 app = Flask(__name__)
 
 # ─── MySQL 配置 ──────────────────────────────────────────────────
+# 支持通过环境变量配置（Docker 部署时使用）
 DB_CONFIG = {
-    'host':    'localhost',
-    'port':    3306,
-    'user':    'root',
-    'password': '123456',
+    'host':    os.getenv('DB_HOST', 'localhost'),
+    'port':    int(os.getenv('DB_PORT', '3306')),
+    'user':    os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD', '123456'),
     'charset': 'utf8mb4',
 }
-DB_NAME = 'c8_prediction'
+DB_NAME = os.getenv('DB_NAME', 'c8_prediction')
 
 
 def get_db():

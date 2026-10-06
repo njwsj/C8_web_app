@@ -34,6 +34,7 @@ web_app/
 | 依赖项       | 版本要求            | 说明                                  |
 | ------------ | ------------------- | ------------------------------------- |
 | Python       | ≥ 3.8（建议 3.10+） | -                                     |
+| MySQL        | ≥ 5.7               | 用于存储预测历史记录                  |
 | PyTorch      | ≥ 1.12              | 支持 CPU 推理，有 CUDA 则自动使用 GPU |
 | Flask        | ≥ 2.0               | Web 框架                              |
 | pandas       | ≥ 1.3               | 数据处理                              |
@@ -41,6 +42,21 @@ web_app/
 | scipy        | ≥ 1.7               | 三次样条插值                          |
 | openpyxl     | ≥ 3.0               | Excel 文件读取                        |
 | joblib       | ≥ 1.0               | Scaler 序列化                         |
+| pymysql      | ≥ 1.0               | Python MySQL 驱动                     |
+
+## 前置依赖
+
+在开始部署前，需在新电脑上提前安装以下两项：
+
+**1. Conda**
+
+用于创建隔离的 Python 虚拟环境。推荐安装 Miniconda：https://docs.conda.io/en/latest/miniconda.html
+
+**2. MySQL（≥ 5.7）**
+
+用于存储预测历史记录。安装后需启动 MySQL 服务，并确保存在满足以下条件的账号（或后续修改 `app.py` 中的 `DB_CONFIG`）：
+- 用户名：`root`
+- 密码：`123456`
 
 ## 部署步骤
 
@@ -51,31 +67,41 @@ conda create -n c8pred python=3.10
 conda activate c8pred
 ```
 
-**步骤 2：安装依赖包**
+**步骤 2：安装并配置 MySQL**
+
+安装 MySQL（≥ 5.7），启动服务后确保以下默认配置可用（或修改 `app.py` 第 47-53 行的 `DB_CONFIG`）：
+
+- host: `localhost`
+- port: `3306`
+- user: `root`
+- password: `123456`
+
+系统启动时会自动创建数据库 `c8_prediction` 及所需数据表，无需手动建库。
+
+**步骤 3：安装 Python 依赖包**
 
 ```bash
-pip install flask pandas scipy scikit-learn torch openpyxl joblib
+pip install flask pandas scipy scikit-learn torch openpyxl joblib pymysql
 ```
 
-**步骤 3：配置 C8 原始数据路径**
+**步骤 4：配置 C8 原始数据路径**
 
-修改 `app.py` 第 30 行，将 `ROOT_C8` 指向 C8 选择性 Excel 文件的实际路径：
+修改 `app.py` 第 31 行，将 `ROOT_C8` 指向 C8 选择性 Excel 文件的实际路径：
 
 ```python
 ROOT_C8 = r"/实际路径/C8选择性.xlsx"
 ```
 
-**步骤 4：训练模型并保存（首次部署时执行）**
-
-```bash
-cd code/web_app && python train_save.py
-```
-
-**步骤 5：启动预测服务**
+**步骤 5：启动预测服务（model/ 目录已含预训练文件，可直接启动）**
 
 ```bash
 cd code/web_app && python app.py
 ```
+
+> 若需要重新训练模型，先修改 `train_save.py` 第 26-27 行的 `ROOT_C8` 和 `ROOT_DCS` 为本机实际路径，再运行：
+> ```bash
+> cd code/web_app && python train_save.py
+> ```
 
 **步骤 6：访问系统**
 
@@ -109,11 +135,13 @@ cd code/web_app && python app.py
 
 ## API 接口
 
-| 接口路径       | 方法 | 说明                                                        |
-| -------------- | ---- | ----------------------------------------------------------- |
-| `/`            | GET  | 前端主页面                                                  |
-| `/api/status`  | GET  | 查询模型文件是否就绪，返回 `{"model_ready": true/false}`    |
-| `/api/predict` | POST | 上传 DCS Excel 文件，执行历史回测及未来预测，返回 JSON 结果 |
+| 接口路径            | 方法 | 说明                                                        |
+| ------------------- | ---- | ----------------------------------------------------------- |
+| `/`                 | GET  | 前端主页面                                                  |
+| `/api/status`       | GET  | 查询模型文件是否就绪，返回 `{"model_ready": true/false}`    |
+| `/api/predict`      | POST | 上传 DCS Excel 文件，执行历史回测及未来预测，返回 JSON 结果 |
+| `/api/history`      | GET  | 返回最近 50 条预测历史记录（需 MySQL 可用）                 |
+| `/api/history/<id>` | GET  | 返回指定历史记录的完整时间序列数据（需 MySQL 可用）         |
 
 ### /api/predict 请求参数
 
@@ -146,10 +174,13 @@ cd code/web_app && python app.py
 
 ## 常见问题
 
-| 问题现象                     | 可能原因                               | 处理方式                                      |
-| ---------------------------- | -------------------------------------- | --------------------------------------------- |
-| 页面显示"模型未就绪"         | model 目录下缺少 .pth 或 .pkl 文件     | 运行 `train_save.py` 重新训练并保存模型       |
-| 预测报错"缺少列：..."        | DCS 文件列名与要求不符                 | 检查并修正 Excel 文件列名（注意中文字符）     |
-| 预测报错"有效时间窗口数不足" | 上传数据时间跨度太短或超出 C8 数据范围 | 确保时间范围在 C8 实测数据内且跨度 ≥ 120 小时 |
-| 预测结果偏低/偏高            | 上传数据对应停产期或开机爬坡阶段       | 选择正常生产期数据上传                        |
-| 服务无法访问                 | 未启动 app.py 或端口被占用             | 确认 `python app.py` 已运行；或修改 port 参数 |
+| 问题现象                     | 可能原因                               | 处理方式                                                                   |
+| ---------------------------- | -------------------------------------- | -------------------------------------------------------------------------- |
+| 启动报错 `No module named 'pymysql'` | 未安装 pymysql                  | 运行 `pip install pymysql`                                                 |
+| 启动打印 `[警告] 数据库初始化失败`  | MySQL 未启动或账号密码有误          | 确认 MySQL 服务已启动，并检查 `app.py` 中 `DB_CONFIG` 的配置是否正确       |
+| 页面显示"模型未就绪"         | model 目录下缺少 .pth 或 .pkl 文件     | 运行 `train_save.py` 重新训练并保存模型                                    |
+| 运行 train_save.py 报文件不存在 | 脚本内硬编码路径未修改              | 修改 `train_save.py` 第 26-27 行的 `ROOT_C8` 和 `ROOT_DCS` 为实际路径     |
+| 预测报错"缺少列：..."        | DCS 文件列名与要求不符                 | 检查并修正 Excel 文件列名（注意中文字符）                                  |
+| 预测报错"有效时间窗口数不足" | 上传数据时间跨度太短或超出 C8 数据范围 | 确保时间范围在 C8 实测数据内且跨度 ≥ 120 小时                              |
+| 预测结果偏低/偏高            | 上传数据对应停产期或开机爬坡阶段       | 选择正常生产期数据上传                                                     |
+| 服务无法访问                 | 未启动 app.py 或端口被占用             | 确认 `python app.py` 已运行；或修改 port 参数                              |

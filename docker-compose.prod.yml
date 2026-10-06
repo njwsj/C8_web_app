@@ -1,0 +1,17 @@
+# 服务器部署用：直接从阿里云镜像仓库拉取，无需在服务器上构建
+# 用法：docker compose -f docker-compose.prod.yml up -d
+services:
+  c8_web_app:
+    image: crpi-u2rwpdfvp9j9uwht.cn-beijing.personal.cr.aliyuncs.com/njwsj/c8:v1
+    container_name: c8_prediction_service
+    ports:
+      - "5001:5001"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - c8_network
+    restart: unless-stopped
+
+networks:
+  c8_network:
+    driver: bridge

@@ -1,0 +1,43 @@
+services:
+  c8_web_app:
+    image: njwsj666/c8-prediction:latest
+    container_name: c8_prediction_service
+    ports:
+      - "5001:5001"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DB_HOST=mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - c8_network
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    container_name: c8_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: c8_prediction
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - c8_network
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p123456"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+
+networks:
+  c8_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
